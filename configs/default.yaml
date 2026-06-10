@@ -1,0 +1,39 @@
+seed: 42
+
+audio:
+  sample_rate: 16000      # Hz, everything resampled to this
+  window_seconds: 1.0     # length of each classification window
+  hop_seconds: 0.5        # stride between windows (0.5 => 50% overlap)
+  mono: true
+  min_rms: 0.0            # drop windows quieter than this RMS (0 = keep all)
+
+features:
+  n_mels: 64
+  n_fft: 1024
+  hop_length: 256
+  fmin: 50
+  fmax: 8000
+  to_db: true             # log-compress the mel spectrogram
+
+paths:
+  raw_dir: data/raw
+  interim_dir: data/interim
+  manifest_dir: data/manifests
+  output_dir: outputs
+
+split:
+  test_size: 0.15
+  val_size: 0.15          # fraction of the *full* set, taken from the non-test remainder
+  group_col: source_clip_id   # split by recording, never by window -> no leakage
+  stratify: true              # keep class balance across splits
+
+labels:
+  drone: 1
+  negative: 0
+
+# --- placeholders for later phases (read by Phase 2+ code) ---
+train:
+  batch_size: 32
+  epochs: 20
+  lr: 0.001
+  model: cnn              # baseline | cnn | pretrained

@@ -10,15 +10,8 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 
-# data (large / licensed)
-data/raw/
-data/interim/
-data/manifests/*.csv
-outputs/
-*.png
-
-# os / editor
-.DS_Store
-Thumbs.db
-.vscode/
-.idea/
+# data & generated artefacts (keep folders via .gitkeep, ignore contents)
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.git

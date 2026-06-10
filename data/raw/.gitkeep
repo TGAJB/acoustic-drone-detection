@@ -1,0 +1,2 @@
+# Place raw audio here as data/raw/<label>/<dataset>/<clip>.wav
+# <label> must be exactly 'drone' or 'negative'. Contents are gitignored.
