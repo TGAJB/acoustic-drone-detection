@@ -1,0 +1,24 @@
+# virtual environment — never commit this (recreate from requirements.txt)
+.venv/
+venv/
+env/
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.pytest_cache/
+
+# data (large / licensed)
+data/raw/
+data/interim/
+data/manifests/*.csv
+outputs/
+*.png
+
+# os / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
